@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'com.dalet.mediator'
+version '1.0.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+	implementation ('com.dalet.mediator:cortex-client:2.1.0')
+    implementation ('com.amazonaws:aws-java-sdk-s3:1.11.337')
+    implementation ('org.json:json:20180130')
+}
+
+task execute(type:JavaExec) {
+   main = 'CortexClientSampleApp'
+   classpath = sourceSets.main.runtimeClasspath
+}
